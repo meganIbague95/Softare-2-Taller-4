@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -36,9 +37,11 @@ public class ProveedorInformacion<T> {
         if(almacenamiento.get(tabla.getName())==null){
             return null;
         }
+        
         return (T) almacenamiento.get(tabla.getName()).get(id);
     }
     
+   
     public T guardar(T object) {
         try {
             Method m = object.getClass().getMethod("getId");

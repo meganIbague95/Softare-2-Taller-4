@@ -20,6 +20,7 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(co.edu.uptc.sw2.taller4.servicio.BusquedaServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.CarreraServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.EstudianteServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.FacultadServicio.class);
