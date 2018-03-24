@@ -10,7 +10,7 @@ module.controller('HorariosCtrl', ['$scope', '$filter', '$http', function ($scop
                     .success(function (data, status, headers, config) {
                         $scope.lista = data;
                     }).error(function (data, status, headers, config) {
-                alert('Error al consultar la informaci\xf3n, por favor intente m\xe1s tarde');
+                alert('Error al consultar la informaci\xf3n, por favor intente m\xe1s tarde ---- ');
             });
         };
 
@@ -31,7 +31,7 @@ module.controller('HorariosCtrl', ['$scope', '$filter', '$http', function ($scop
                 return;
             $http.post('./webresources/Horarios', JSON.stringify($scope.datosFormulario), {}
             ).success(function (data, status, headers, config) {
-                alert("Los datos han sido guardados con Exito");
+                alert("Los datos han sido guardados con Exito ---- ");
                 $scope.panelEditar = false;
                 $scope.listar();
             }).error(function (data, status, headers, config) {
@@ -55,7 +55,7 @@ module.controller('HorariosCtrl', ['$scope', '$filter', '$http', function ($scop
                         .success(function (data, status, headers, config) {
                             $scope.listar();
                         }).error(function (data, status, headers, config) {
-                    alert('Error al eliminar la informaci\xf3n de Horarios, por favor intente m\xe1s tarde');
+                    alert('Error al eliminar la informaci\xf3n de Profesor, por favor intente m\xe1s tarde');
                 });
             }
         };

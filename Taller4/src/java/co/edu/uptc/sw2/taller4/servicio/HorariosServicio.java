@@ -5,6 +5,7 @@
  */
 package co.edu.uptc.sw2.taller4.servicio;
 
+import co.edu.uptc.sw2.taller4.dto.HorarioDTO;
 import co.edu.uptc.sw2.taller4.dto.MateriaDTO;
 import java.util.List;
 import javax.ws.rs.Consumes;
@@ -27,37 +28,37 @@ import javax.ws.rs.core.MediaType;
 public class HorariosServicio {
     
     /**
-     * retorna una lista con las Materias
+     * retorna una lista con los horarios
      *
-     * @return retorna una lista de MateriaDTO
+     * @return retorna una lista de horarios
      * @generated
      */
     @GET
-    public List<MateriaDTO> obtenerListaMaterias() {
-        return ProveedorInformacion.instance().obtenerTodos(MateriaDTO.class);
+    public List<HorarioDTO> obtenerListaHorarios() {
+        return ProveedorInformacion.instance().obtenerTodos(HorarioDTO.class);
     }
 
     /**
-     * @param id identificador del elemento Materia
-     * @return Materia del id dado
+     * @param id identificador del elemento horario
+     * @return Horario del id dado
      * @generated
      */
     @GET
     @Path("/{id}")
-    public MateriaDTO obtenerMateria(@PathParam("id") Long id) {
-        return (MateriaDTO) ProveedorInformacion.instance().obtener(MateriaDTO.class, id);
+    public HorarioDTO obtenerHorario(@PathParam("id") Long id) {
+        return (HorarioDTO) ProveedorInformacion.instance().obtener(HorarioDTO.class, id);
     }
 
     /**
-     * almacena la informacion de una materia
+     * almacena la informacion de un horario
      *
-     * @param dto Materia a guardar
-     * @return Materia con los cambios realizados por el proceso de guardar
+     * @param dto horario a guardar
+     * @return horario con los cambios realizados por el proceso de guardar
      * @generated
      */
     @POST
-    public MateriaDTO guardarMateria(MateriaDTO dto) {
-        return (MateriaDTO) ProveedorInformacion.instance().guardar(dto);
+    public HorarioDTO guardarHorario(HorarioDTO dto) {
+        return (HorarioDTO) ProveedorInformacion.instance().guardar(dto);
     }
 
     /**
@@ -68,8 +69,8 @@ public class HorariosServicio {
      */
     @DELETE
     @Path("/{id}")
-    public void borrarMateria(@PathParam("id") Long id) {
-        ProveedorInformacion.instance().eliminar(MateriaDTO.class, id);
+    public void borrarHorario(@PathParam("id") Long id) {
+        ProveedorInformacion.instance().eliminar(HorarioDTO.class, id);
     }
     
     

@@ -38,23 +38,39 @@ public class MateriaDTO {
      */
     private ProfesorDTO profesor;
 
-    private List<HorarioDTO> horario;
+   // private List<HorarioDTO> horario;
     
-    public List<HorarioDTO> getHorario(){
-    	if(this.horario==null){
-    		horario=new ArrayList<HorarioDTO>();
-    	}
-    	return horario;
+   // public List<HorarioDTO> getHorario(){
+    //	if(this.horario==null){
+    //		horario=new ArrayList<HorarioDTO>();
+    //	}
+    //	return horario;
+   // }
+    
+    //public void setHorario(List<HorarioDTO> horario){
+    //	this.horario=horario;
+   // }
+
+
+    private HorarioDTO horario;
+
+    public HorarioDTO getHorario() {
+        return horario;
+    }
+
+    public void setHorario(HorarioDTO horario) {
+        this.horario = horario;
     }
     
-    public void setHorario(List<HorarioDTO> horario){
-    	this.horario=horario;
-    }
     
     /**
      * @generated
      */
     private CarreraDTO carrera;
+    
+    
+   
+    
 
     /**
      * @generated
@@ -112,4 +128,8 @@ public class MateriaDTO {
         this.carrera = carrera;
     }
 
+    
+   
+    
+    
 }

@@ -5,6 +5,7 @@
  */
 package co.edu.uptc.sw2.taller4.servicio;
 
+import co.edu.uptc.sw2.taller4.dto.HorarioDTO;
 import co.edu.uptc.sw2.taller4.dto.MateriaDTO;
 import java.util.List;
 import javax.ws.rs.Consumes;
@@ -70,6 +71,7 @@ public class MateriaServicio {
     @Path("/{id}")
     public void borrarMateria(@PathParam("id") Long id) {
         ProveedorInformacion.instance().eliminar(MateriaDTO.class, id);
+        ProveedorInformacion.instance().eliminar(HorarioDTO.class, id);
     }
     
     
