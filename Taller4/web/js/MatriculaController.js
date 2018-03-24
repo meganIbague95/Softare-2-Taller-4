@@ -61,7 +61,9 @@ module.controller('MatriculaCtrl', ['$scope', '$filter', '$http', function ($sco
         $scope.guardar = function () {
             $scope.errores = {};
             var error = false;
-            
+
+            if (error)
+                return;
             $http.post('./webresources/Matricula', JSON.stringify($scope.datosFormulario), {}
             ).success(function (data, status, headers, config) {
                 alert("Los datos han sido guardados con Exito");

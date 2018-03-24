@@ -28,17 +28,17 @@ public class MatriculaServicio {
      /**
      * retorna una lista con los Estudiante que se encuentran en la base de datos
      *
-     * @return retorna una lista de EstudianteDTO
+     * @return retorna una lista de MatriculaDTO
      * @generated
      */
     @GET
-    public List<MatriculaDTO> obtenerTodosCarreras() {
+    public List<MatriculaDTO> obtenerTodasMatriculaDTO() {
         return ProveedorInformacion.instance().obtenerTodos(MatriculaDTO.class);
     }
 
     /**
-     * @param id identificador del elemento Estudiante
-     * @return Estudiante del id dado
+     * @param id identificador del elemento Matricula
+     * @return Matricula del id dado
      * @generated
      */
     @GET
@@ -48,10 +48,10 @@ public class MatriculaServicio {
     }
 
     /**
-     * almacena la informacion de Estudiante
+     * almacena la informacion de Matricula
      *
-     * @param dto Estudiante a guardar
-     * @return Estudiante con los cambios realizados por el proceso de guardar
+     * @param dto Matricula a guardar
+     * @return Matricula con los cambios realizados por el proceso de guardar
      * @generated
      */
     @POST
@@ -60,9 +60,9 @@ public class MatriculaServicio {
     }
 
     /**
-     * elimina el registro Carrera con el identificador dado
+     * elimina el registro Matricula con el identificador dado
      *
-     * @param id identificador del Carrera
+     * @param id identificador del Matricula
      * @generated
      */
     @DELETE
