@@ -17,6 +17,8 @@
                     profesor
                 </th>				<th>
                     carrera
+                </th>				<th>
+                    Horario
                 </th>
                 <th>
                     <input class="form-control" ng-model="q"  placeholder="Buscar"/>
@@ -28,7 +30,14 @@
                 <td>{{row.creditos}}</td>
 
 
-                <td class="row">{{row.profesor.nombre}}</td>              	<td class="row">{{row.carrera.nombre}}</td>              
+                <td class="row">{{row.profesor.nombres}}</td>              	
+                
+                <td class="row">{{row.carrera.nombre}}</td>
+                
+                <td class="row">{{row.carrera.nombre}}</td>
+                
+                
+                
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar

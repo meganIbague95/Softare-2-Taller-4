@@ -24,6 +24,16 @@ public class HorarioDTO {
     }
 	
     
+    private MateriaDTO materia;
+
+    public MateriaDTO getMateria() {
+        return materia;
+    }
+
+    public void setMateria(MateriaDTO materia) {
+        this.materia = materia;
+    }
+    
     /**
     * @generated
     */

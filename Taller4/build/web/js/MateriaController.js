@@ -33,7 +33,7 @@ module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope
         };
         $scope.listarProfesor();
         $scope.listarHorario = function () {
-            $http.get('./webresources/Horario', {})
+            $http.get('./webresources/Horarios', {})
                     .success(function (data, status, headers, config) {
                         $scope.listaHorario = data;
                     }).error(function (data, status, headers, config) {
