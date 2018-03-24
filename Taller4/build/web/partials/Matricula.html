@@ -29,18 +29,14 @@
                 </th>
             </tr>
             <tr dir-paginate="row in lista|filter: q|itemsPerPage:10">
-                <td>{{row.nombres}}</td>
+                <td>{{row.anio}}</td>
 
-                <td>{{row.apellidos}}</td>
+                <td>{{row.semestre}}</td>
 
-                <td>{{row.codigo}}</td>
+                <td>{{row.estudiante}}</td>
 
-                 <td>{{row.documento}}</td>
-
-                <td>{{row.fechaNacimiento| date: 'dd/MM/yyyy'}}</td>
-
-
-                <td class="row">{{row.carrera.nombre}}</td>              	<td class="row">{{row.lugarNacimiento.nombre}}</td>              
+                 <td>{{row.materias}}</td>
+                              
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
