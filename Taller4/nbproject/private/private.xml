@@ -15,8 +15,9 @@
             <file>file:/D:/Documents/NetBeansProjects/Taller5/src/java/org/netbeans/rest/application/config/ApplicationConfig.java</file>
         </group>
         <group>
-            <file>file:/E:/Universidad/Software%20II/TallerServiciosWeb/Taller4/web/js/ProfesorController.js</file>
             <file>file:/E:/Universidad/Software%20II/TallerServiciosWeb/Taller4/web/partials/Materia.html</file>
+            <file>file:/E:/Universidad/Software%20II/TallerServiciosWeb/Taller4/web/partials/Horarios.html</file>
+            <file>file:/E:/Universidad/Software%20II/TallerServiciosWeb/Taller4/web/js/MateriaController.js</file>
         </group>
     </open-files>
 </project-private>

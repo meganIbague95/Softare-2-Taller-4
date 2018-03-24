@@ -54,7 +54,7 @@
 </div>
 
 <div class="panel panel-primary" ng-show="panelEditar">
-    <div class="panel-heading">Parametrizaci&oacute;n de Materia</div>
+    <div class="panel-heading">add de Materia</div>
     <div class="panel-body">
         <form role="form" id="formularioEditar">
             <div class="row">
@@ -69,6 +69,33 @@
                 </div>
             </div>				<div class="row">
                 <div class="form-group col-md-6" ng-class="errores.creditos ? 'error' : ''">
+                    <label for="creditos">creditos</label>
+                    <input id="creditos" 
+                           class="form-control" 
+                           type="text"
+                           ng-model="datosFormulario.creditos"
+                           placeholder="creditos"/>
+                    <div ng-show="errores.creditos">{{errores.creditos}}</div>
+                </div>
+                 <div class="form-group col-md-6" ng-class="errores.creditos ? 'error' : ''">
+                    <label for="creditos">creditos</label>
+                    <input id="creditos" 
+                           class="form-control" 
+                           type="text"
+                           ng-model="datosFormulario.creditos"
+                           placeholder="creditos"/>
+                    <div ng-show="errores.creditos">{{errores.creditos}}</div>
+                </div>
+                 <div class="form-group col-md-6" ng-class="errores.creditos ? 'error' : ''">
+                    <label for="creditos">creditos</label>
+                    <input id="creditos" 
+                           class="form-control" 
+                           type="text"
+                           ng-model="datosFormulario.creditos"
+                           placeholder="creditos"/>
+                    <div ng-show="errores.creditos">{{errores.creditos}}</div>
+                </div>
+                 <div class="form-group col-md-6" ng-class="errores.creditos ? 'error' : ''">
                     <label for="creditos">creditos</label>
                     <input id="creditos" 
                            class="form-control" 
