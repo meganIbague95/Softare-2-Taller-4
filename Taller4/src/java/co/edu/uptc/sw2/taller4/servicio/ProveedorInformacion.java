@@ -39,25 +39,27 @@ public class ProveedorInformacion<T> {
         return (T) almacenamiento.get(tabla.getName()).get(id);
     }
     
-    public T guardar(T object){
+    public T guardar(T object) {
         try {
-            Method m=object.getClass().getMethod("getId");
-            if(m.invoke(object)==null){
+            Method m = object.getClass().getMethod("getId");
+            if (m.invoke(object) == null) {
                 //guardar
-                if(secuencia.get(object.getClass().getName())==null){
-                    secuencia.put(object.getClass().getName(),1L);
+                if (secuencia.get(object.getClass().getName()) == null) {
+                    secuencia.put(object.getClass().getName(), 1L);
+                }          
+                
+                if (almacenamiento.get(object.getClass().getName()) == null) {
+                    almacenamiento.put(object.getClass().getName(), new HashMap<>());
+
                 }
-                if(almacenamiento.get(object.getClass().getName())==null){
-                    almacenamiento.put(object.getClass().getName(),new HashMap<>());
-                }
-                Long id=secuencia.get(object.getClass().getName());
-                almacenamiento.get(object.getClass().getName()).put(id,object);
-                m=object.getClass().getMethod("setId",Long.class);
+                Long id = secuencia.get(object.getClass().getName());
+                almacenamiento.get(object.getClass().getName()).put(id, object);
+                m = object.getClass().getMethod("setId", Long.class);
                 m.invoke(object, id);
-                secuencia.put(object.getClass().getName(),id+1);
-            }else{
+                secuencia.put(object.getClass().getName(), id + 1);
+            } else {
                 //actualizar
-                almacenamiento.get(object.getClass().getName()).put(secuencia.get(object.getClass().getName()),object);
+                almacenamiento.get(object.getClass().getName()).replace((Long) m.invoke(object), object);
             }
             return (T) almacenamiento.get(object.getClass().getName()).get(secuencia.get(object.getClass().getName()));
         } catch (NoSuchMethodException ex) {
@@ -73,6 +75,7 @@ public class ProveedorInformacion<T> {
         }
         return null;
     }
+
     
     public void eliminar(Class tabla, Long id){
         almacenamiento.get(tabla.getName()).remove(id);
