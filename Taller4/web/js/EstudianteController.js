@@ -13,6 +13,41 @@ module.controller('EstudianteCtrl', ['$scope', '$filter', '$http', function ($sc
                 alert('Error al consultar la informaci\xf3n, por favor intente m\xe1s tarde');
             });
         };
+        
+        
+        function buscar()
+		{
+			var tableReg = document.getElementById('datos');
+			var searchText = document.getElementById('searchTerm').value.toLowerCase();
+			var cellsOfRow="";
+			var found=false;
+			var compareWith="";
+ 
+			// Recorremos todas las filas con contenido de la tabla
+			for (var i = 1; i < $scope.lista.length; i++)
+			{
+				cellsOfRow =  $scope.lista.rows[i].getElementsByTagName('td');
+				found = false;
+				// Recorremos todas las celdas
+				for (var j = 0; j <  $scope.lista.length && !found; j++)
+				{
+					compareWith =  $scope.lista[j].innerHTML.toLowerCase();
+					// Buscamos el texto en el contenido de la celda
+					if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+					{
+						found = true;
+					}
+				}
+				if(found)
+				{
+					 $scope.lista.rows[i].style.display = '';
+				} else {
+					// si no ha encontrado ninguna coincidencia, esconde la
+					// fila de la tabla
+					 $scope.lista.rows[i].style.display = 'none';
+				}
+			}
+		}
 
         $scope.listarCarrera = function () {
             $http.get('./webresources/Carrera', {})

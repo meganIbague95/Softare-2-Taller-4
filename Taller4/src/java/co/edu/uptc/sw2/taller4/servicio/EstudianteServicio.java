@@ -7,6 +7,8 @@ package co.edu.uptc.sw2.taller4.servicio;
 
 import co.edu.uptc.sw2.taller4.dto.CarreraDTO;
 import co.edu.uptc.sw2.taller4.dto.EstudianteDTO;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -46,6 +48,23 @@ public class EstudianteServicio {
     @Path("/{id}")
     public EstudianteDTO obtenerEstudiante(@PathParam("id") Long id) {
         return (EstudianteDTO) ProveedorInformacion.instance().obtener(EstudianteDTO.class, id);
+    }
+    
+    @GET    
+    @Path("/search/{busqueda}")
+    public List<EstudianteDTO> obtenerEstudiantes(@PathParam("busqueda") String busqueda) {
+        List<EstudianteDTO> estudiantes=ProveedorInformacion.instance().obtenerTodos(EstudianteDTO.class);
+        List<EstudianteDTO> estudiantesReturn = new ArrayList();
+        Iterator iterator = estudiantes.iterator();
+        while (iterator.hasNext()) {            
+          EstudianteDTO registro = (EstudianteDTO)iterator.next();
+        
+          if(registro.getNombres().equals(busqueda) || registro.getApellidos().equals(busqueda) || busqueda.equals(registro.getNombres()+ " " + registro.getApellidos()))
+            estudiantesReturn.add(registro);
+        }
+        
+        
+        return  estudiantesReturn;
     }
 
     /**
