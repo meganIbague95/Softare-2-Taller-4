@@ -1,12 +1,12 @@
 'use strict';
 
-module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
+module.controller('HorariosCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
         //listar
         $scope.lista = [];
         $scope.datosFormulario = {};
         $scope.panelEditar = false;
         $scope.listar = function () {
-            $http.get('./webresources/Materia', {})
+            $http.get('./webresources/Horarios', {})
                     .success(function (data, status, headers, config) {
                         $scope.lista = data;
                     }).error(function (data, status, headers, config) {
@@ -14,33 +14,6 @@ module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope
             });
         };
 
-        $scope.listarCarrera = function () {
-            $http.get('./webresources/Carrera', {})
-                    .success(function (data, status, headers, config) {
-                        $scope.listaCarrera = data;
-                    }).error(function (data, status, headers, config) {
-                alert('Error al consultar la informaci\xf3n de carrera, por favor intente m\xe1s tarde');
-            });
-        };
-        $scope.listarCarrera();
-        $scope.listarProfesor = function () {
-            $http.get('./webresources/Profesor', {})
-                    .success(function (data, status, headers, config) {
-                        $scope.listaProfesor = data;
-                    }).error(function (data, status, headers, config) {
-                alert('Error al consultar la informaci\xf3n de profesor, por favor intente m\xe1s tarde');
-            });
-        };
-        $scope.listarProfesor();
-        $scope.listarHorario = function () {
-            $http.get('./webresources/Horarios', {})
-                    .success(function (data, status, headers, config) {
-                        $scope.listaHorario = data;
-                    }).error(function (data, status, headers, config) {
-                alert('Error al consultar la informaci\xf3n de horario, por favor intente m\xe1s tarde');
-            });
-        };
-        $scope.listarHorario();
 
 
         $scope.listar();
@@ -56,7 +29,7 @@ module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope
 
             if (error)
                 return;
-            $http.post('./webresources/Materia', JSON.stringify($scope.datosFormulario), {}
+            $http.post('./webresources/Horarios', JSON.stringify($scope.datosFormulario), {}
             ).success(function (data, status, headers, config) {
                 alert("Los datos han sido guardados con Exito");
                 $scope.panelEditar = false;
@@ -78,11 +51,11 @@ module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope
         //eliminar
         $scope.eliminar = function (data) {
             if (confirm('\xbfDesea elminar este registro?')) {
-                $http.delete('./webresources/Materia/' + data.id, {})
+                $http.delete('./webresources/Horarios/' + data.id, {})
                         .success(function (data, status, headers, config) {
                             $scope.listar();
                         }).error(function (data, status, headers, config) {
-                    alert('Error al eliminar la informaci\xf3n de Materia, por favor intente m\xe1s tarde');
+                    alert('Error al eliminar la informaci\xf3n de Horarios, por favor intente m\xe1s tarde');
                 });
             }
         };

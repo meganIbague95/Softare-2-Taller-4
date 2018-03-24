@@ -9,7 +9,7 @@
         <table class="resultados table table-striped">
             <tr>
                 <th>
-                    nombre
+                    nombre 
                 </th>				<th>
                     creditos
                 </th>
@@ -17,6 +17,8 @@
                     profesor
                 </th>				<th>
                     carrera
+                </th>				<th>
+                    Horario
                 </th>
                 <th>
                     <input class="form-control" ng-model="q"  placeholder="Buscar"/>
@@ -28,7 +30,14 @@
                 <td>{{row.creditos}}</td>
 
 
-                <td class="row">{{row.profesor.nombre}}</td>              	<td class="row">{{row.carrera.nombre}}</td>              
+                <td class="row">{{row.profesor.nombres}}</td>              	
+                
+                <td class="row">{{row.carrera.nombre}}</td>
+                
+                <td class="row">{{row.carrera.nombre}}</td>
+                
+                
+                
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
@@ -74,11 +83,12 @@
                     <label>profesor</label>
                     <select id="profesor" class="form-control" 
                             ng-model="datosFormulario.profesor"
-                            ng-options="option.nombre for option in listaProfesor track by option.id">
+                            ng-options="option.nombres for option in listaProfesor track by option.id">
                     </select>
                     <div ng-show="errores.profesor">{{errores.profesor}}</div>
                 </div>
-            </div>				<div class="row">
+            </div>				
+            <div class="row">
                 <div class="form-group col-md-6" ng-class="errores.idAseg ? 'error' : ''">
                     <label>carrera</label>
                     <select id="carrera" class="form-control" 

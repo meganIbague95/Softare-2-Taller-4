@@ -17,8 +17,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/Estudiante', {templateUrl: 'partials/Estudiante.html', controller: 'EstudianteCtrl'});
         $routeProvider.when('/Profesor', {templateUrl: 'partials/Profesor.html', controller: 'ProfesorCtrl'});
         $routeProvider.when('/Matricula', {templateUrl: 'partials/Matricula.html', controller: 'MatriculaCtrl'});
+<<<<<<< HEAD
         $routeProvider.when('/BuscarEstudiante', {templateUrl: 'partials/BuscarEstudiante.html',controller: 'BusquedaCtrl'});
         $routeProvider.when('/BuscarEstudiante/:busqueda', {templateUrl: 'partials/BuscarEstudiante.html',controller: 'BusquedaCtrl'});
+=======
+        $routeProvider.when('/Horarios', {templateUrl: 'partials/Horarios.html', controller: 'HorariosCtrl'});
+>>>>>>> 5170ebf09c71ae22ec15e6f4377e4f6838827057
         
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
