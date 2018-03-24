@@ -23,8 +23,10 @@ public class ApplicationConfig extends Application {
         resources.add(co.edu.uptc.sw2.taller4.servicio.CarreraServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.EstudianteServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.FacultadServicio.class);
+        resources.add(co.edu.uptc.sw2.taller4.servicio.MateriaServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.MatriculaServicio.class);
         resources.add(co.edu.uptc.sw2.taller4.servicio.MunicipioServicio.class);
+        resources.add(co.edu.uptc.sw2.taller4.servicio.ProfesorServicio.class);
         resources.add(org.netbeans.rest.application.config.GsonMessageBodyHandler.class);
     }
 
