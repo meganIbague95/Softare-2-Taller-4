@@ -51,10 +51,10 @@ module.controller('MatriculaCtrl', ['$scope', '$filter', '$http', function ($sco
         };
 
         
-        //$scope.listar();
+        $scope.listar();
         //guardar
         $scope.nuevo = function () {
-            $scope.panelEditar = true;
+            $scope.panelEditar = false;
             $scope.datosFormulario = {};
         };
 
